@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumiya Asghar — Writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF7F2;
+  --warm: #FDF9F4;
+  --ink: #1A1612;
+  --ink-soft: #3D342C;
+  --terra: #C4714A;
+  --terra-light: #E8957A;
+  --gold: #C9A96E;
+  --gold-light: #E8D5A8;
+  --sage: #7A8C72;
+  --border: #E4DCCC;
+  --border-light: #F0EAE0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,247,242,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;letter-spacing:.08em;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--terra)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 80px}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:28px;opacity:0;animation:fadeUp .8s ease forwards .2s}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,5.2rem);font-weight:300;line-height:1.05;margin-bottom:28px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.hero-h1 em{font-style:italic;color:var(--terra)}
+.hero-sub{font-size:.98rem;line-height:1.8;color:var(--ink-soft);max-width:420px;margin-bottom:44px;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .8s}
+.btn-p{background:var(--terra);color:#fff;padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:background .2s,transform .2s;display:inline-block}
+.btn-p:hover{background:var(--ink);transform:translateY(-2px)}
+.btn-s{border:1px solid var(--border);color:var(--ink-soft);padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-s:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:44px;margin-top:52px;padding-top:36px;border-top:1px solid var(--border);opacity:0;animation:fadeUp .8s ease forwards 1s}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--terra);line-height:1}
+.stat-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+.hero-right{background:linear-gradient(145deg,var(--gold-light) 0%,#E8C9A0 50%,#D4A882 100%);display:flex;align-items:flex-end;padding:48px;opacity:0;animation:fadeIn 1.2s ease forwards .4s}
+.hero-right-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(26,22,18,.75);line-height:1.7;border-left:2px solid rgba(196,113,74,.4);padding-left:20px}
+
+/* MARQUEE */
+.marquee{background:var(--ink);padding:13px 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-block;animation:scroll 35s linear infinite}
+.marquee-inner span{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:0 36px}
+.marquee-inner .dot{color:var(--terra);padding:0 4px}
+
+/* SECTIONS SHARED */
+.section-label{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.section-h2{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;line-height:1.15;color:var(--ink)}
+.section-h2 em{font-style:italic;color:var(--terra)}
+
+/* ABOUT */
+.about{padding:100px 80px;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;border-bottom:1px solid var(--border)}
+.about-right p{font-size:1rem;line-height:1.85;color:var(--ink-soft);margin-bottom:22px}
+.about-right strong{color:var(--ink);font-weight:500}
+.pullquote{margin-top:36px;padding:26px 30px;border-left:3px solid var(--terra);background:var(--warm)}
+.pullquote blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--ink);line-height:1.5;margin-bottom:10px}
+.pullquote cite{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-style:normal}
+.pullquote cite strong{color:var(--terra)}
+
+/* SERVICES */
+.services{padding:100px 80px;background:var(--warm);border-bottom:1px solid var(--border)}
+.services-hdr{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;align-items:end}
+.services-hdr p{font-size:.93rem;color:var(--ink-soft);line-height:1.75}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.scard{background:var(--cream);padding:38px 34px;transition:background .3s}
+.scard:hover{background:var(--ink)}
+.scard:hover .snum,.scard:hover .stitle,.scard:hover .sdesc{color:var(--cream)}
+.scard:hover .sdiv{background:var(--terra)}
+.snum{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--terra);margin-bottom:18px;transition:color .3s}
+.sdiv{width:28px;height:1px;background:var(--border);margin-bottom:18px;transition:background .3s}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--ink);margin-bottom:12px;line-height:1.2;transition:color .3s}
+.sdesc{font-size:.83rem;color:var(--ink-soft);line-height:1.7;transition:color .3s}
+
+/* WRITING */
+.writing{padding:100px 80px;border-bottom:1px solid var(--border)}
+.writing-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.agrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2px;background:var(--border)}
+.acard{background:var(--cream);padding:38px;text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;min-height:280px;transition:background .3s;position:relative}
+.acard::after{content:'→';position:absolute;bottom:38px;right:38px;font-size:1.1rem;color:var(--terra);opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
+.acard:hover{background:var(--warm)}
+.acard:hover::after{opacity:1;transform:translateX(0)}
+.acard.feat{grid-row:span 2;background:var(--ink)}
+.acard.feat .atag,.acard.feat .atitle,.acard.feat .aexc,.acard.feat .ameta{color:var(--cream)}
+.acard.feat .atag{color:var(--terra-light)}
+.acard.feat::after{color:var(--terra-light)}
+.atag{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.atitle{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:14px;flex-grow:1}
+.acard.feat .atitle{font-size:1.9rem}
+.aexc{font-size:.83rem;line-height:1.65;color:var(--ink-soft);margin-bottom:22px}
+.ameta{font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);display:flex;gap:14px;flex-wrap:wrap}
+.li-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);margin-top:2px}
+.licard{background:var(--warm);padding:32px 38px;border-left:3px solid transparent;transition:border-color .3s,background .3s}
+.licard:hover{border-left-color:var(--terra);background:var(--cream)}
+.li-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.li-label::before{content:'';display:inline-block;width:5px;height:5px;background:var(--sage);border-radius:50%}
+.li-text{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.55;color:var(--ink);margin-bottom:14px}
+.li-imp{font-size:.68rem;letter-spacing:.08em;color:var(--terra);text-transform:uppercase}
+
+/* TESTIMONIALS */
+.testimonials{padding:100px 80px;background:var(--warm);border-bottom:1px solid var(--border)}
+.test-hdr{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:56px;align-items:end}
+.test-hdr p{font-size:.93rem;color:var(--ink-soft);line-height:1.75}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:2px}
+.tcard{background:var(--cream);padding:34px 30px;display:flex;flex-direction:column;gap:20px;transition:background .3s}
+.tcard:hover{background:var(--ink)}
+.tcard:hover .tquote,.tcard:hover .tname,.tcard:hover .trole{color:var(--cream)}
+.tcard:hover .tsource{color:var(--gold)}
+.tstars{color:var(--terra);font-size:.72rem;letter-spacing:3px;margin-bottom:2px}
+.tquote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.6;color:var(--ink);flex-grow:1;transition:color .3s}
+.tname{font-size:.83rem;font-weight:500;color:var(--ink);transition:color .3s}
+.trole{font-size:.72rem;color:var(--ink-soft);line-height:1.4;margin-top:2px;transition:color .3s}
+.tsource{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-top:10px;transition:color .3s}
+.tcard.feat2{grid-column:span 2;background:var(--ink)}
+.tcard.feat2 .tquote{font-size:1.45rem;color:var(--cream)}
+.tcard.feat2 .tname,.tcard.feat2 .trole{color:var(--cream)}
+.tcard.feat2 .tsource{color:var(--gold)}
+.tcard.feat2:hover{background:#2D2520}
+.upwork-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.ucard{background:var(--cream);padding:28px 30px;border-top:3px solid var(--sage)}
+.ubadge{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.ubadge::before{content:'★★★★★ ';color:var(--gold);letter-spacing:2px}
+.uquote{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--ink);line-height:1.55;margin-bottom:10px}
+.utags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.utag{font-size:.63rem;letter-spacing:.06em;padding:4px 10px;background:var(--border-light);color:var(--ink-soft)}
+
+/* PROCESS */
+.process{padding:100px 80px;background:var(--ink);border-bottom:1px solid #2D2520}
+.process .section-label{color:var(--gold)}
+.process .section-h2{color:var(--cream);margin-bottom:56px}
+.process .section-h2 em{color:var(--gold)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.pstep{border-top:1px solid #3D342C;padding-top:28px}
+.pnum{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--terra);line-height:1;margin-bottom:16px;opacity:.6}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--cream);margin-bottom:10px}
+.pdesc{font-size:.82rem;line-height:1.7;color:#A89880}
+
+/* NICHES */
+.niches{padding:72px 80px;display:flex;align-items:center;gap:72px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.niches-label{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;flex-shrink:0}
+.ntags{display:flex;flex-wrap:wrap;gap:10px}
+.ntag{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;padding:8px 20px;border:1px solid var(--border);color:var(--ink-soft);transition:all .2s;cursor:default}
+.ntag:hover{background:var(--terra);border-color:var(--terra);color:#fff}
+
+/* CONTACT */
+.contact{padding:120px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,3.5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:22px}
+.contact-left h2 em{font-style:italic;color:var(--terra)}
+.contact-left p{font-size:.97rem;line-height:1.8;color:var(--ink-soft);margin-bottom:36px}
+.cdetail{display:flex;align-items:center;gap:16px;margin-bottom:14px;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.cdetail:hover{color:var(--terra)}
+.cdetail-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;min-width:70px;color:var(--gold)}
+.cdetail-val{font-size:.93rem}
+.contact-right{background:var(--warm);padding:52px 44px;border:1px solid var(--border)}
+.contact-right h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:400;color:var(--ink);margin-bottom:28px}
+.fg{margin-bottom:22px}
+.fg label{display:block;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:7px}
+.fg input,.fg textarea,.fg select{width:100%;padding:13px 15px;background:var(--cream);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--ink);outline:none;transition:border-color .2s;appearance:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--terra)}
+.fg textarea{resize:vertical;min-height:110px}
+.fsub{width:100%;background:var(--terra);color:#fff;border:none;padding:15px;font-family:'DM Sans',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:6px}
+.fsub:hover{background:var(--ink)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:44px 80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--cream);letter-spacing:.06em}
+.footer-copy{font-size:.68rem;color:#7A6A58;letter-spacing:.08em}
+.footer-links{display:flex;gap:26px}
+.footer-links a{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#7A6A58;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:18px 24px}
+  .nav-links{gap:20px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:100px 24px 48px}
+  .hero-right{display:none}
+  .about,.contact{grid-template-columns:1fr;gap:36px;padding:60px 24px}
+  .services,.writing,.testimonials,.process{padding:60px 24px}
+  .services-hdr,.test-hdr{grid-template-columns:1fr}
+  .sgrid,.tgrid,.upwork-row{grid-template-columns:1fr}
+  .tcard.feat2{grid-column:auto}
+  .agrid{grid-template-columns:1fr}
+  .acard.feat{grid-row:auto}
+  .li-grid{grid-template-columns:1fr}
+  .writing-hdr{flex-direction:column;align-items:flex-start;gap:20px}
+  .pgrid{grid-template-columns:1fr 1fr;gap:24px}
+  .niches{padding:40px 24px;gap:20px}
+  footer{padding:28px 24px;flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-name">Sumiya Asghar</a>
+  <ul class="nav-links">
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="eyebrow">Freelance Writer &middot; Bournemouth, UK</p>
+    <h1 class="hero-h1">Words that don't<br>sound like<br><em>everyone else.</em></h1>
+    <p class="hero-sub">I write for businesses and publications who want content that feels like it was written by an actual human. Marketing, personal essays, brand storytelling — with a voice that sticks.</p>
+    <div class="ctas">
+      <a href="#writing" class="btn-p">See My Writing</a>
+      <a href="#contact" class="btn-s">Let's Work Together</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5.9K</div>
+        <div class="stat-label">LinkedIn followers</div>
+      </div>
+      <div>
+        <div class="stat-num">5.0</div>
+        <div class="stat-label">Upwork rating</div>
+      </div>
+      <div>
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Years writing</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-right-text">
+      "I made my first million at 20.<br>
+      At 27, I was managing a fish-and-chips shop.<br>
+      Now I write about all of it — honestly."
+    </p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Marketing &amp; Business</span><span class="dot">&#10022;</span>
+    <span>Personal Essays</span><span class="dot">&#10022;</span>
+    <span>Brand Storytelling</span><span class="dot">&#10022;</span>
+    <span>Immigration &amp; Identity</span><span class="dot">&#10022;</span>
+    <span>LinkedIn Content</span><span class="dot">&#10022;</span>
+    <span>HubSpot &amp; CRM</span><span class="dot">&#10022;</span>
+    <span>Ghostwriting</span><span class="dot">&#10022;</span>
+    <span>Entrepreneurship</span><span class="dot">&#10022;</span>
+    <span>Marketing &amp; Business</span><span class="dot">&#10022;</span>
+    <span>Personal Essays</span><span class="dot">&#10022;</span>
+    <span>Brand Storytelling</span><span class="dot">&#10022;</span>
+    <span>Immigration &amp; Identity</span><span class="dot">&#10022;</span>
+    <span>LinkedIn Content</span><span class="dot">&#10022;</span>
+    <span>HubSpot &amp; CRM</span><span class="dot">&#10022;</span>
+    <span>Ghostwriting</span><span class="dot">&#10022;</span>
+    <span>Entrepreneurship</span><span class="dot">&#10022;</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about reveal" id="about">
+  <div>
+    <p class="section-label">About</p>
+    <h2 class="section-h2">A writer who<br>has <em>lived</em> it.</h2>
+  </div>
+  <div class="about-right">
+    <p>I'm Sumiya — a writer and marketer from Pakistan, now based in Bournemouth, England. I started my first business at 20, running a content operation in Karachi that employed women in remote roles. <strong>I made my first million PKR before I turned 21.</strong></p>
+    <p>Then I moved to the UK to study. I worked in a fish and chips shop. I bartended. I delivered pizzas. I graduated with a Masters in Marketing Management from Bournemouth University. Four days before my ceremony, I landed a role at a UK EdTech company managing HubSpot, lifecycle campaigns, and CRM strategy across four brands.</p>
+    <p>I write the way I have lived — <strong>honestly, with no neat bow tied at the end.</strong> That is what makes content people actually read.</p>
+    <div class="pullquote">
+      <blockquote>&quot;I'm very bad at posting on LinkedIn — something I've seen you are good at!&quot;</blockquote>
+      <cite>— Director of Marketing Ops, UK Tech Sector</cite>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services reveal" id="services">
+  <div class="services-hdr">
+    <div>
+      <p class="section-label">What I Write</p>
+      <h2 class="section-h2">Content that<br><em>earns its place.</em></h2>
+    </div>
+    <p>I don't write filler. Every piece has a point and a person behind it. Here's what I can do for you.</p>
+  </div>
+  <div class="sgrid">
+    <div class="scard">
+      <p class="snum">01</p><div class="sdiv"></div>
+      <h3 class="stitle">Blog &amp; Long-Form Articles</h3>
+      <p class="sdesc">SEO-informed, human-first. Articles that rank and that people actually finish reading. Marketing, business, tech, career — written with authority because I work in these spaces.</p>
+    </div>
+    <div class="scard">
+      <p class="snum">02</p><div class="sdiv"></div>
+      <h3 class="stitle">LinkedIn Content</h3>
+      <p class="sdesc">Posts that get seen, shared, and remembered. I write LinkedIn content for founders and professionals who have something to say but don't know how to say it.</p>
+    </div>
+    <div class="scard">
+      <p class="snum">03</p><div class="sdiv"></div>
+      <h3 class="stitle">Email Newsletters</h3>
+      <p class="sdesc">Campaigns people open because they want to, not because the subject line tricked them. Written with real personality and a clear goal.</p>
+    </div>
+    <div class="scard">
+      <p class="snum">04</p><div class="sdiv"></div>
+      <h3 class="stitle">Brand Storytelling</h3>
+      <p class="sdesc">About pages, founder stories, mission statements. The copy that tells the world why you exist and why it should care. Warm, specific, never generic.</p>
+    </div>
+    <div class="scard">
+      <p class="snum">05</p><div class="sdiv"></div>
+      <h3 class="stitle">HubSpot &amp; MarTech Content</h3>
+      <p class="sdesc">Guides, case studies, and explainers on HubSpot, CRM strategy, and marketing automation. I don't just write about this — I do it daily.</p>
+    </div>
+    <div class="scard">
+      <p class="snum">06</p><div class="sdiv"></div>
+      <h3 class="stitle">Ghostwriting</h3>
+      <p class="sdesc">5-star rated on Upwork. From mystery thrillers to sales pages — I write in your voice, for your audience, and hand it over without the credit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING SAMPLES -->
+<section class="writing reveal" id="writing">
+  <div class="writing-hdr">
+    <div>
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-h2">Words that<br><em>did something.</em></h2>
+    </div>
+  </div>
+  <div class="agrid">
+    <a href="https://medium.com/@sumiyasghar" target="_blank" class="acard feat">
+      <div>
+        <p class="atag">Personal Essay &middot; Featured</p>
+        <h3 class="atitle">I Made My First Million at 20. At 27, I Was Managing a Fish-and-Chips Shop in England.</h3>
+        <p class="aexc">This isn't a comeback story. I'm still in it. The story of two businesses, one visa, a kitchen that caught fire, and what it actually costs to start over.</p>
+      </div>
+      <div class="ameta"><span>Medium</span><span>11 views &middot; 6 reads</span><span>Feb 2026</span></div>
+    </a>
+    <a href="https://medium.com/@sumiyasghar" target="_blank" class="acard">
+      <div>
+        <p class="atag">Personal Essay</p>
+        <h3 class="atitle">I Used to Open a Fish and Chips Shop at 11am. Now I Open HubSpot at 9am.</h3>
+        <p class="aexc">Same person. Same energy. Completely different life.</p>
+      </div>
+      <div class="ameta"><span>Medium</span><span>Women Write &mdash; Approved</span><span>23 claps</span></div>
+    </a>
+    <a href="https://medium.com/@sumiyasghar" target="_blank" class="acard">
+      <div>
+        <p class="atag">Marketing &middot; HubSpot</p>
+        <h3 class="atitle">You Installed HubSpot. So Why Isn't It Working?</h3>
+        <p class="aexc">Most teams blame the tool. The problem is almost never the tool.</p>
+      </div>
+      <div class="ameta"><span>Medium</span><span>Women Write &mdash; Approved</span><span>20 claps</span></div>
+    </a>
+  </div>
+  <div class="li-grid">
+    <div class="licard">
+      <div class="li-label">LinkedIn Post</div>
+      <p class="li-text">"4 failures in 2 months. That's how many times I took the HubSpot Academy's Email Marketing exam before finally passing. I didn't just study for a badge. I studied to make sure no lead ever falls through the cracks again."</p>
+      <p class="li-imp">&#10022; 1,295 impressions &middot; 20 reactions</p>
+    </div>
+    <div class="licard">
+      <div class="li-label">LinkedIn Post</div>
+      <p class="li-text">"I lost &pound;3,000 to job hunting. Finding a job is a full-time job. From printing letters to going to countless interview rounds for an entry-level position, everything costs money."</p>
+      <p class="li-imp">&#10022; 1,181 impressions &middot; 6 reactions</p>
+    </div>
+    <div class="licard">
+      <div class="li-label">LinkedIn Post</div>
+      <p class="li-text">"Asking for a sponsorship job rarely gets you one. Not because you're unqualified. But because sponsorship is a business decision, not a favour."</p>
+      <p class="li-imp">&#10022; 1,076 impressions</p>
+    </div>
+    <div class="licard">
+      <div class="li-label">LinkedIn Post</div>
+      <p class="li-text">"Why EASY APPLY should never be used for finding sponsorship jobs in the UK. The people who get sponsored usually didn't ask loudly. They built quietly and became hard to ignore."</p>
+      <p class="li-imp">&#10022; 1,027 impressions &middot; 3 reactions</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal" id="testimonials">
+  <div class="test-hdr">
+    <div>
+      <p class="section-label">What People Say</p>
+      <h2 class="section-h2">Clients. Colleagues.<br><em>All real.</em></h2>
+    </div>
+    <p>From people who have hired me, worked alongside me, and reported to me — across continents and industries. Every word is from a public LinkedIn recommendation or verified Upwork review.</p>
+  </div>
+  <div class="tgrid">
+    <div class="tcard feat2">
+      <div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tquote">"Sumiya is not just your run-of-the-mill writer — she is a maestro of words who weaves magic into every piece she creates. From technical articles to heartfelt storytelling, she effortlessly wears multiple hats and delivers exceptional results every time. She is the undisputed master of adaptation."</p>
+      </div>
+      <div>
+        <div class="tname">Maheen Nasir &amp; Hafsa Anwar</div>
+        <div class="trole">Ebook Writer, E-Write Solutions &middot; SEO Content Writer &amp; PR Writer &middot; Former teammates</div>
+        <div class="tsource">LinkedIn Recommendations</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tquote">"She is one of the best writers I have ever worked with. Cooperative, sensible and exceeded the deadlines. 10/10."</p>
+      </div>
+      <div>
+        <div class="tname">Sana Suleman</div>
+        <div class="trole">CEO, SAS Venture &middot; $200k+ in sales &middot; Former client</div>
+        <div class="tsource">LinkedIn Recommendation</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tquote">"Her work consistently surpasses expectations. Captivating, well-researched content. Professional, reliable, and dedicated to meeting deadlines — an invaluable asset to any team."</p>
+      </div>
+      <div>
+        <div class="tname">Tahamie Farooqui</div>
+        <div class="trole">Google-Certified Project Manager &middot; Founder &middot; Former client</div>
+        <div class="tsource">LinkedIn Recommendation</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tquote">"She is an exceptional leader, mentor, and guide. I wholeheartedly recommend Sumiya to anyone seeking a passionate writer. She is a true asset and gem to any organisation."</p>
+      </div>
+      <div>
+        <div class="tname">Muhammad Fuzail Khan</div>
+        <div class="trole">Digital Transformation Strategist &middot; Direct report at Virtue Xolutions</div>
+        <div class="tsource">LinkedIn Recommendation</div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div>
+        <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tquote">"You are not only a content or copywriter — you are a creative writer. You always write something new."</p>
+      </div>
+      <div>
+        <div class="tname">Nabeel Baig</div>
+        <div class="trole">AI Engineer &middot; Senior Full Stack Developer &middot; Tech Lead</div>
+        <div class="tsource">LinkedIn Recommendation</div>
+      </div>
+    </div>
+  </div>
+  <div class="upwork-row">
+    <div class="ucard">
+      <div class="ubadge">Upwork &middot; 5.0</div>
+      <p class="uquote">"Sumiya did a fantastic job writing. She wrote a high-quality story, was easy to communicate with, delivered early, and was a delight to work with. I look forward to working with her again."</p>
+      <div class="utags"><span class="utag">Committed to Quality</span><span class="utag">Clear Communicator</span><span class="utag">Reliable</span><span class="utag">Collaborative</span></div>
+    </div>
+    <div class="ucard">
+      <div class="ubadge">Upwork &middot; 5.0</div>
+      <p class="uquote">"Very knowledgeable and experienced ghostwriter. With a short call, we devised a fun and unique storyline. Sumiya brought the story and the characters to life in a creative way. I will be happy to hire her for future projects."</p>
+      <div class="utags"><span class="utag">Collaborative</span><span class="utag">Committed to Quality</span></div>
+    </div>
+    <div class="ucard">
+      <div class="ubadge">Upwork &middot; 5.0 &middot; January 2026</div>
+      <p class="uquote">"Great job."</p>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.5">Sales page writing project. Delivered within one week. Repeat client relationship.</p>
+      <div class="utags"><span class="utag">Sales Copy</span><span class="utag">Fast Turnaround</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process reveal">
+  <p class="section-label">How I Work</p>
+  <h2 class="section-h2">Simple process.<br><em>No surprises.</em></h2>
+  <div class="pgrid">
+    <div class="pstep"><div class="pnum">01</div><h3 class="ptitle">Brief Call</h3><p class="pdesc">20 minutes to understand your goal, audience, and what success looks like. I come prepared with questions.</p></div>
+    <div class="pstep"><div class="pnum">02</div><h3 class="ptitle">Research &amp; Outline</h3><p class="pdesc">I research your industry, competitors, and keywords before I write a single word. No guessing.</p></div>
+    <div class="pstep"><div class="pnum">03</div><h3 class="ptitle">First Draft</h3><p class="pdesc">Delivered on time. Clean, structured, written in a voice that sounds like you — or like me, if that's what you want.</p></div>
+    <div class="pstep"><div class="pnum">04</div><h3 class="ptitle">Revisions &amp; Delivery</h3><p class="pdesc">Two rounds of revisions included. Final copy in whatever format you need, ready to publish.</p></div>
+  </div>
+</section>
+
+<!-- NICHES -->
+<section class="niches reveal">
+  <p class="niches-label">I write about</p>
+  <div class="ntags">
+    <span class="ntag">Marketing &amp; CRM</span>
+    <span class="ntag">HubSpot &amp; Automation</span>
+    <span class="ntag">Entrepreneurship</span>
+    <span class="ntag">Immigration</span>
+    <span class="ntag">Career &amp; Identity</span>
+    <span class="ntag">EdTech &amp; SaaS</span>
+    <span class="ntag">Women in Business</span>
+    <span class="ntag">Life in the UK</span>
+    <span class="ntag">Ghostwriting</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-left">
+    <p class="section-label">Get In Touch</p>
+    <h2>Let's make<br>something<br><em>worth reading.</em></h2>
+    <p>I'm currently available for freelance writing projects. Whether you need one blog post or ongoing content support, get in touch and let's talk.</p>
+    <a href="/cdn-cgi/l/email-protection#c5b6b0a8acbca4a4b6a2ada4b785a0a8a4aca9eba6aaa8" class="cdetail">
+      <span class="cdetail-label">Email</span>
+      <span class="cdetail-val">sumiyaasghar@[your email]</span>
+    </a>
+    <a href="https://linkedin.com/in/sumiya-asghar-884403196" target="_blank" class="cdetail">
+      <span class="cdetail-label">LinkedIn</span>
+      <span class="cdetail-val">linkedin.com/in/sumiya-asghar</span>
+    </a>
+    <a href="https://medium.com/@sumiyasghar" target="_blank" class="cdetail">
+      <span class="cdetail-label">Medium</span>
+      <span class="cdetail-val">@sumiyasghar</span>
+    </a>
+    <a href="https://sumiyawriter-bee.github.io/sumiya-portfolio/" target="_blank" class="cdetail">
+      <span class="cdetail-label">HubSpot</span>
+      <span class="cdetail-val">Marketing Ops Portfolio &rarr;</span>
+    </a>
+  </div>
+  <div class="contact-right">
+    <h3>Tell me about your project</h3>
+    <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith"></div>
+    <div class="fg"><label>Email</label><input type="email" placeholder="jane@company.com"></div>
+    <div class="fg">
+      <label>What do you need?</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Blog / Long-Form Articles</option>
+        <option>LinkedIn Content</option>
+        <option>Email Newsletter</option>
+        <option>Brand Storytelling</option>
+        <option>HubSpot / MarTech Content</option>
+        <option>Ghostwriting</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <div class="fg"><label>Tell me more</label><textarea placeholder="Tell me about your project, timeline, and what you're hoping to achieve..."></textarea></div>
+    <button class="fsub" id="fsub">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Sumiya Asghar</span>
+  <div class="footer-links">
+    <a href="https://medium.com/@sumiyasghar" target="_blank">Medium</a>
+    <a href="https://linkedin.com/in/sumiya-asghar-884403196" target="_blank">LinkedIn</a>
+    <a href="https://sumiyawriter-bee.github.io/sumiya-portfolio/" target="_blank">HubSpot Portfolio</a>
+  </div>
+  <span class="footer-copy">&copy; 2026 Sumiya Asghar. All rights reserved.</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.08});
+  reveals.forEach(el => obs.observe(el));
+
+  document.getElementById('fsub').addEventListener('click', function(){
+    this.textContent = 'Message Sent \u2736';
+    this.style
